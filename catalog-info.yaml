@@ -4,7 +4,9 @@ metadata:
   name: cook-app-one
   annotations:
     github.com/project-slug: arulvannala/cook-app-one
+    'backstage.io/kubernetes-label-selector': 'carto.run/workload-name=cook-app-one'
 spec:
-  type: other
+  type: service
   lifecycle: unknown
   owner: default
+  system: backstage
