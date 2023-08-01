@@ -2,10 +2,10 @@ apiVersion: services.apps.tanzu.vmware.com/v1alpha1
 kind: ResourceClaim
 metadata:
   name: cook-app-one-config-claim
-  namespace: jeremy
+  #namespace: jeremy
 spec:
   ref:
     apiVersion: config.apps.tanzu.vmware.com/v1alpha4
     kind: ConfigurationSlice
     name: cook-app-one-config
-    namespace: jeremy
+    #namespace: jeremy

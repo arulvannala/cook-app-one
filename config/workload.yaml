@@ -2,7 +2,7 @@ apiVersion: carto.run/v1alpha1
 kind: Workload
 metadata:
   name: cook-app-one
-  namespace: jeremy
+  #namespace: jeremy
   labels:
     apps.tanzu.vmware.com/workload-type: web
     app.kubernetes.io/part-of: cook-app-one
@@ -30,6 +30,6 @@ spec:
       value: "stg"
   source:
     git:
-      url: ssh://git@github.com/x95castle1/cook-app-one
+      url: https://github.com/arulvannala/cook-app-one
       ref:
         branch: main
