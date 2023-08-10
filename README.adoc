@@ -44,4 +44,4 @@ image::special-of-the-day.png[link:docs/images/special-of-the-day.png]
 For more information about the Config Server and its use in a client application, see the https://docs.pivotal.io/spring-cloud-services/config-server/writing-client-applications.html[Config Server documentation].
 
 
-######
+###################
