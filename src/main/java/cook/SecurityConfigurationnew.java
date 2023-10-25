@@ -19,10 +19,10 @@ public class SecurityConfigurationnew {
 
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
-        http.sessionManagement()
+         http.sessionManagement()
                 .sessionCreationPolicy(SessionCreationPolicy.NEVER)
-            .and().authorizeRequests()
-                .antMatchers("/api/v1/session/**",
+            .and().authorizeHttpRequests() 
+                .requestMatchers("/api/v1/session/**",
                              "/swagger-ui/**",
                              "/api/swagger-ui/**",
                              "/v3/api-docs/**",
@@ -31,6 +31,7 @@ public class SecurityConfigurationnew {
                              "/livez",
                              "/dev/**").permitAll()
                 .anyRequest().authenticated();
+        return null;
 
     }
 }
