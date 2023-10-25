@@ -47,7 +47,7 @@ public class SecurityConfiguration {
                              "/readyz",
                              "/livez",
                              "/dev/**").permitAll()
-                .anyRequest().authenticated()
+                .anyRequest().authenticated();
 
     }
 }
