@@ -27,18 +27,15 @@ import org.springframework.security.web.SecurityFilterChain;
 public class SecurityConfiguration {
 
     @Bean
-    public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
-        return http
-                .authorizeHttpRequests().anyRequest().permitAll()
-                .and()
-                .httpBasic().disable()
-                .csrf().disable()
-                .build();
-    }
-}
+    // public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
+    //     return http
+    //             .authorizeHttpRequests().anyRequest().permitAll()
+    //             .and()
+    //             .httpBasic().disable()
+    //             .csrf().disable()
+    //             .build();
 
-
-public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
+    public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http.sessionManagement()
                 .sessionCreationPolicy(SessionCreationPolicy.NEVER)
             .and().authorizeRequests()
@@ -51,3 +48,8 @@ public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Excepti
                              "/livez",
                              "/dev/**").permitAll()
                 .anyRequest().authenticated()
+
+    }
+}
+
+
