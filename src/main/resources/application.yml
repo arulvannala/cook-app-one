@@ -13,8 +13,23 @@ encrypt:
     alias: mytestkey
     secret: changeme
 
+# management:
+#   endpoints:
+#     web:
+#       exposure:
+#         include: '*'
+
 management:
-  endpoints:
-    web:
-      exposure:
-        include: '*'
+  server:
+    port: 8088
+    ssl:
+      enabled: false
+  endpoint:
+    health:
+      probes:
+        enabled: true
+  health:
+    livenessState:
+      enabled: true
+    readinessState:
+      enabled: true
