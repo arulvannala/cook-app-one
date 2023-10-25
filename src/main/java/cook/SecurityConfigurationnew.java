@@ -13,7 +13,7 @@ import org.springframework.security.config.http.SessionCreationPolicy;
 
 @Configuration
 @Profile("development")
-
+@EnableWebSecurity
 
 public class SecurityConfigurationnew {
 
