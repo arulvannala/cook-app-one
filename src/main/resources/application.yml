@@ -21,7 +21,7 @@ encrypt:
 
 management:
   server:
-    port: 8088
+    port: 8080
     ssl:
       enabled: false
   endpoint:
