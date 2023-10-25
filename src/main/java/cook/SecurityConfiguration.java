@@ -39,7 +39,7 @@ public class SecurityConfiguration {
     }
 }
 
-public class SecurityConfiguration {
+public class SecurityConfigurationnew {
 
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
