@@ -36,3 +36,18 @@ public class SecurityConfiguration {
                 .build();
     }
 }
+
+
+public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
+        http.sessionManagement()
+                .sessionCreationPolicy(SessionCreationPolicy.NEVER)
+            .and().authorizeRequests()
+                .antMatchers("/api/v1/session/**",
+                             "/swagger-ui/**",
+                             "/api/swagger-ui/**",
+                             "/v3/api-docs/**",
+                             "/actuator/**",
+                             "/readyz",
+                             "/livez",
+                             "/dev/**").permitAll()
+                .anyRequest().authenticated()
