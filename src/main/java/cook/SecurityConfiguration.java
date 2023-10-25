@@ -28,7 +28,22 @@ public class SecurityConfiguration {
 
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
-         http.sessionManagement()
+        return http
+                .authorizeHttpRequests().anyRequest().permitAll()
+                .and()
+                .httpBasic().disable()
+                .csrf().disable()
+                .build();
+          
+
+    }
+}
+
+public class SecurityConfiguration {
+
+    @Bean
+    public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
+        http.sessionManagement()
                 .sessionCreationPolicy(SessionCreationPolicy.NEVER)
             .and().authorizeRequests()
                 .antMatchers("/api/v1/session/**",
@@ -40,29 +55,6 @@ public class SecurityConfiguration {
                              "/livez",
                              "/dev/**").permitAll()
                 .anyRequest().authenticated();
-        return http
-                .authorizeHttpRequests().anyRequest().permitAll()
-                .and()
-                .httpBasic().disable()
-                .csrf().disable()
-                .build();
-          
-
-    // public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
-    //     http.sessionManagement()
-    //             .sessionCreationPolicy(SessionCreationPolicy.NEVER)
-    //         .and().authorizeRequests()
-    //             .antMatchers("/api/v1/session/**",
-    //                          "/swagger-ui/**",
-    //                          "/api/swagger-ui/**",
-    //                          "/v3/api-docs/**",
-    //                          "/actuator/**",
-    //                          "/readyz",
-    //                          "/livez",
-    //                          "/dev/**").permitAll()
-    //             .anyRequest().authenticated();
 
     }
 }
-
-
