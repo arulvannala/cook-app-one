@@ -14,28 +14,28 @@
  * limitations under the License.
  */
 
-// package cook;
+package cook;
 
-// import org.springframework.context.annotation.Bean;
-// import org.springframework.context.annotation.Configuration;
-// import org.springframework.context.annotation.Profile;
-// import org.springframework.security.config.annotation.web.builders.HttpSecurity;
-// import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Profile;
+import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.web.SecurityFilterChain;
 
-// @Configuration
-// @Profile("development")
-// public class SecurityConfiguration {
+@Configuration
+@Profile("development")
+public class SecurityConfiguration {
 
-//     @Bean
-//     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
-//         return http
-//                 .authorizeHttpRequests().anyRequest().permitAll()
-//                 .and()
-//                 .httpBasic().disable()
-//                 .csrf().disable()
-//                 .build();
+    @Bean
+    public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
+        return http
+                .authorizeHttpRequests().anyRequest().permitAll()
+                .and()
+                .httpBasic().disable()
+                .csrf().disable()
+                .build();
           
 
-//     }
-// }
+    }
+}
 

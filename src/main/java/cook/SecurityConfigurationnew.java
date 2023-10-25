@@ -11,27 +11,27 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.http.SessionCreationPolicy;
 
 
-@Configuration
-@Profile("development")
-// @EnableWebSecurity
+// @Configuration
+// @Profile("development")
+// // @EnableWebSecurity
 
-public class SecurityConfigurationnew {
+// public class SecurityConfigurationnew {
 
-    @Bean
-    public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
-         http.sessionManagement()
-                .sessionCreationPolicy(SessionCreationPolicy.NEVER)
-            .and().authorizeHttpRequests() 
-                .requestMatchers("/api/v1/session/**",
-                             "/swagger-ui/**",
-                             "/api/swagger-ui/**",
-                             "/v3/api-docs/**",
-                             "/actuator/**",
-                             "/readyz",
-                             "/livez",
-                             "/dev/**").permitAll()
-                .anyRequest().authenticated();
-        return null;
+//     @Bean
+//     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
+//          http.sessionManagement()
+//                 .sessionCreationPolicy(SessionCreationPolicy.NEVER)
+//             .and().authorizeHttpRequests() 
+//                 .requestMatchers("/api/v1/session/**",
+//                              "/swagger-ui/**",
+//                              "/api/swagger-ui/**",
+//                              "/v3/api-docs/**",
+//                              "/actuator/**",
+//                              "/readyz",
+//                              "/livez",
+//                              "/dev/**").permitAll()
+//                 .anyRequest().authenticated();
+//         return null;
 
-    }
-}
+//     }
+// }
