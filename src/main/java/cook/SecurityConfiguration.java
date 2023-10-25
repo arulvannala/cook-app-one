@@ -23,31 +23,31 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.web.SecurityFilterChain;
 
 @Configuration
-@Profile("stg")
+@Profile("development")
 public class SecurityConfiguration {
 
     @Bean
-    // public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
-    //     return http
-    //             .authorizeHttpRequests().anyRequest().permitAll()
-    //             .and()
-    //             .httpBasic().disable()
-    //             .csrf().disable()
-    //             .build();
+    public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
+        return http
+                .authorizeHttpRequests().anyRequest().permitAll()
+                .and()
+                .httpBasic().disable()
+                .csrf().disable()
+                .build();
 
-    public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
-        http.sessionManagement()
-                .sessionCreationPolicy(SessionCreationPolicy.NEVER)
-            .and().authorizeRequests()
-                .antMatchers("/api/v1/session/**",
-                             "/swagger-ui/**",
-                             "/api/swagger-ui/**",
-                             "/v3/api-docs/**",
-                             "/actuator/**",
-                             "/readyz",
-                             "/livez",
-                             "/dev/**").permitAll()
-                .anyRequest().authenticated();
+    // public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
+    //     http.sessionManagement()
+    //             .sessionCreationPolicy(SessionCreationPolicy.NEVER)
+    //         .and().authorizeRequests()
+    //             .antMatchers("/api/v1/session/**",
+    //                          "/swagger-ui/**",
+    //                          "/api/swagger-ui/**",
+    //                          "/v3/api-docs/**",
+    //                          "/actuator/**",
+    //                          "/readyz",
+    //                          "/livez",
+    //                          "/dev/**").permitAll()
+    //             .anyRequest().authenticated();
 
     }
 }
