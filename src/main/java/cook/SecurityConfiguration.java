@@ -33,7 +33,16 @@ public class SecurityConfiguration {
                 .and()
                 .httpBasic().disable()
                 .csrf().disable()
-                .build();
+                .build()
+                .antMatchers("/api/v1/session/**",
+                             "/swagger-ui/**",
+                             "/api/swagger-ui/**",
+                             "/v3/api-docs/**",
+                             "/actuator/**",
+                             "/readyz",
+                             "/livez",
+                             "/dev/**").permitAll()
+                .anyRequest().authenticated();
 
     // public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
     //     http.sessionManagement()
